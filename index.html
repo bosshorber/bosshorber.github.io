@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>臭鼬-习性、防臭应对与野生动物科普指南</title>
+<meta name="description" content="了解臭鼬的基本特征、生活习性、食性与分布，掌握遇到臭鼬时的正确应对方法、宠物被喷后的除臭处理，以及城市中减少臭鼬入侵的实用建议。">
+<meta name="keywords" content="臭鼬,臭鼬习性,臭鼬气味,臭鼬防臭,臭鼬驱赶,宠物除臭,野生动物">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --ink:#1c1a19;
+  --ink-soft:#4a4643;
+  --paper:#faf7f2;
+  --paper-2:#f2ece2;
+  --line:#ddd4c6;
+  --accent:#3b6b4f;
+  --accent-2:#8a5a2b;
+  --warn:#a5402c;
+  --radius:14px;
+  --shadow:0 6px 24px rgba(40,32,24,.08);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+img{max-width:100%;}
+
+/* 顶部 */
+.topbar{
+  background:#241f1b;
+  color:#e8dfd2;
+  font-size:13px;
+  padding:6px 0;
+}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.wrap{
+  width:100%;
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+/* 页眉 */
+header.site-header{
+  background:linear-gradient(180deg,#fffdf9 0%,var(--paper) 100%);
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:30;
+  box-shadow:0 2px 10px rgba(40,32,24,.05);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:14px 0;
+  flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{
+  width:44px;height:44px;border-radius:12px;
+  background:radial-gradient(circle at 30% 25%,#4d825f,#22402f);
+  display:flex;align-items:center;justify-content:center;
+  color:#f4efe4;font-size:22px;font-weight:700;
+  flex:none;
+}
+.brand-text b{display:block;font-size:19px;letter-spacing:.5px;}
+.brand-text span{font-size:12.5px;color:var(--ink-soft);}
+nav.main-nav ul{
+  list-style:none;display:flex;gap:6px;margin:0;padding:0;flex-wrap:wrap;
+}
+nav.main-nav a{
+  display:block;padding:8px 14px;border-radius:999px;
+  color:var(--ink-soft);font-size:15px;
+}
+nav.main-nav a:hover{background:var(--paper-2);color:var(--accent);text-decoration:none;}
+
+/* 首屏 */
+.hero{
+  padding:52px 0 40px;
+  background:
+    radial-gradient(900px 320px at 88% -10%,rgba(59,107,79,.14),transparent 70%),
+    radial-gradient(700px 300px at 0% 110%,rgba(138,90,43,.12),transparent 70%);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.35fr .95fr;
+  gap:40px;
+  align-items:center;
+}
+.hero h1{
+  font-size:clamp(28px,4.2vw,44px);
+  line-height:1.25;
+  margin:0 0 16px;
+  letter-spacing:.5px;
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--accent);
+  border-bottom:4px solid rgba(59,107,79,.25);
+}
+.hero p.lead{
+  font-size:17px;
+  color:var(--ink-soft);
+  margin:0 0 24px;
+  max-width:60ch;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-block;
+  padding:11px 22px;
+  border-radius:999px;
+  font-size:15px;
+  font-weight:600;
+  border:1px solid transparent;
+  cursor:pointer;
+}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:#2f5940;text-decoration:none;}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:#fff;}
+.btn-ghost:hover{background:var(--paper-2);text-decoration:none;}
+
+.hero-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:22px 24px;
+}
+.hero-card h2{
+  font-size:15px;margin:0 0 14px;color:var(--accent-2);
+  letter-spacing:1px;text-transform:uppercase;
+}
+.fact-list{list-style:none;margin:0;padding:0;}
+.fact-list li{
+  display:flex;justify-content:space-between;gap:14px;
+  padding:10px 0;border-bottom:1px dashed var(--line);
+  font-size:14.5px;
+}
+.fact-list li:last-child{border-bottom:none;}
+.fact-list span:first-child{color:var(--ink-soft);}
+.fact-list span:last-child{font-weight:600;text-align:right;}
+
+/* 通用区块 */
+section.block{padding:52px 0;}
+section.block.alt{background:var(--paper-2);}
+.section-head{margin-bottom:26px;max-width:74ch;}
+.section-head h2{
+  font-size:clamp(22px,2.6vw,30px);
+  margin:0 0 10px;
+}
+.section-head p{margin:0;color:var(--ink-soft);font-size:15.5px;}
+
+/* 卡片网格 */
+.grid{display:grid;gap:20px;}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+.card h3{margin:0 0 10px;font-size:18px;}
+.card p{margin:0;color:var(--ink-soft);font-size:14.8px;}
+.card .tag{
+  display:inline-block;font-size:12px;letter-spacing:1px;
+  color:var(--accent);background:rgba(59,107,79,.1);
+  padding:3px 10px;border-radius:999px;margin-bottom:12px;
+}
+
+/* 习性列表 */
+.trait-list{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+}
+.trait-list li{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;font-size:14.8px;color:var(--ink-soft);
+}
+.trait-list li b{display:block;color:var(--ink);font-size:15.5px;margin-bottom:4px;}
+
+/* 应对步骤 */
+.steps{counter-reset:step;list-style:none;margin:0;padding:0;}
+.steps li{
+  position:relative;
+  padding:0 0 22px 56px;
+  border-left:2px solid var(--line);
+  margin-left:18px;
+}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0;}
+.steps li::before{
+  counter-increment:step;
+  content:counter(step);
+  position:absolute;left:-19px;top:0;
+  width:36px;height:36px;border-radius:50%;
+  background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:15px;
+}
+.steps li b{display:block;font-size:16.5px;margin-bottom:6px;}
+.steps li p{margin:0;color:var(--ink-soft);font-size:14.8px;}
+
+/* 除臭配方 */
+.formula{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+.formula .card{text-align:left;}
+.formula .num{
+  font-size:26px;font-weight:700;color:var(--accent-2);
+  display:block;margin-bottom:6px;
+}
+
+/* 提示条 */
+.notice{
+  border-left:5px solid var(--warn);
+  background:#fdf3ef;
+  border-radius:10px;
+  padding:18px 22px;
+  color:#5c2a1e;
+  font-size:15px;
+}
+.notice b{color:var(--warn);}
+
+/* FAQ */
+.faq-item{
+  background:#fff;border:1px solid var(--line);
+  border-radius:12px;margin-bottom:12px;overflow:hidden;
+}
+.faq-item summary{
+  cursor:pointer;padding:16px 20px;font-weight:600;font-size:16px;
+  list-style:none;display:flex;justify-content:space-between;gap:12px;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:"＋";color:var(--accent);font-weight:700;}
+.faq-item[open] summary::after{content:"－";}
+.faq-item .answer{
+  padding:0 20px 18px;color:var(--ink-soft);font-size:14.9px;
+  border-top:1px dashed var(--line);margin-top:0;padding-top:14px;
+}
+
+/* 侧栏式提示 */
+.tips{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.tip{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:18px;font-size:14.5px;color:var(--ink-soft);
+}
+.tip b{display:block;color:var(--ink);margin-bottom:6px;font-size:15.5px;}
+
+/* 页脚 */
+footer.site-footer{
+  background:#241f1b;color:#c9c0b3;
+  padding:44px 0 26px;margin-top:10px;
+  font-size:14px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;
+}
+footer.site-footer h4{color:#f2ece2;font-size:15px;margin:0 0 12px;}
+footer.site-footer ul{list-style:none;margin:0;padding:0;}
+footer.site-footer li{margin-bottom:8px;}
+footer.site-footer a{color:#c9c0b3;}
+footer.site-footer a:hover{color:#fff;}
+.footer-bottom{
+  border-top:1px solid #3a332c;margin-top:30px;padding-top:18px;
+  font-size:13px;color:#948b7f;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+
+/* 响应式 */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;}
+  .grid-3{grid-template-columns:repeat(2,1fr);}
+  .formula{grid-template-columns:1fr;}
+  .tips{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  body{font-size:15.5px;}
+  .header-inner{flex-direction:column;align-items:flex-start;}
+  nav.main-nav ul{gap:2px;}
+  nav.main-nav a{padding:7px 11px;font-size:14px;}
+  .grid-3,.grid-2{grid-template-columns:1fr;}
+  .trait-list{grid-template-columns:1fr;}
+  .tips{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  section.block{padding:38px 0;}
+  .hero{padding:36px 0 30px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>野生动物科普 · 城市共处指南</span>
+    <span>内容用于科普参考，不构成处置指令</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">鼬</div>
+      <div class="brand-text">
+        <b>臭鼬科普站</b>
+        <span>认识它，才能更好地与它保持距离</span>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <ul>
+        <li><a href="#intro">基本认识</a></li>
+        <li><a href="#traits">生活习性</a></li>
+        <li><a href="#encounter">遇到怎么办</a></li>
+        <li><a href="#deodorize">除臭处理</a></li>
+        <li><a href="#prevent">防范建议</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero" id="intro">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>臭鼬：一种靠<em>气味防御</em>生存的小型食肉动物</h1>
+        <p class="lead">
+          提到臭鼬，多数人最先想到的是那股难以散去的气味。它其实是一类体型不大、行动谨慎的哺乳动物，
+          主要在夜间活动，遇到威胁时才会动用尾部的臭腺。了解它的活动规律与防御机制，
+          既能减少不必要的接触，也能在意外发生时知道该怎么处理。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#encounter">遇到臭鼬怎么应对</a>
+          <a class="btn btn-ghost" href="#traits">先了解它的习性</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h2>快速认识</h2>
+        <ul class="fact-list">
+          <li><span>动物类别</span><span>哺乳纲 · 食肉目</span></li>
+          <li><span>活动节律</span><span>多在黄昏与夜间</span></li>
+          <li><span>典型特征</span><span>黑白配色、蓬松大尾</span></li>
+          <li><span>防御方式</span><span>喷射臭腺分泌物</span></li>
+          <li><span>食性倾向</span><span>杂食，昆虫占比高</span></li>
+          <li><span>与人的关系</span><span>通常主动回避人类</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 基本认识 -->
+  <section class="block">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>臭鼬是什么动物</h2>
+        <p>
+          臭鼬并不是单一物种，而是一类形态和防御方式相近的动物统称，常见于北美洲，
+          部分种类也分布于其他地区。它们体型粗壮、四肢较短、尾巴蓬松，
+          身上多以黑色为主，搭配白色条纹或斑块。这种高对比度的配色并非装饰，
+          而是一种“警戒色”——让潜在的捕食者在动手之前就意识到代价。
+        </p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <span class="tag">外形</span>
+          <h3>黑白配色与蓬松尾巴</h3>
+          <p>
+            多数臭鼬身体以黑色为底，背部或头部带有白色条纹、斑点或帽状斑块。
+            尾巴长而蓬松，在受惊时会高高竖起，这是即将喷射前的明显信号。
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">分类</span>
+          <h3>并非单一物种</h3>
+          <p>
+            常见的包括条纹臭鼬、斑臭鼬、冠臭鼬等，不同种类在体型、花纹和栖息环境上存在差异。
+            它们在分类学上的归属也经历过多次调整。
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">分布</span>
+          <h3>适应力较强的机会主义者</h3>
+          <p>
+            臭鼬既能生活在草原、林地边缘，也能适应农田、郊区甚至城市边缘地带。
+            只要有食物和可以藏身的缝隙，它们往往就能安顿下来。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 生活习性 -->
+  <section class="block alt" id="traits">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>生活习性与行为特点</h2>
+        <p>
+          臭鼬的行为逻辑其实很清晰：尽量不冲突、尽量省力气、尽量避开天敌。
+          它的很多“让人头疼”的行为，本质上都是在寻找食物和 shelter。
+        </p>
+      </div>
+      <ul class="trait-list">
+        <li>
+          <b>昼伏夜出</b>
+          多数臭鼬在黄昏后开始活动，天亮前返回巢穴。清晨和傍晚是与人偶遇概率较高的时段。
+        </li>
+        <li>
+          <b>杂食但偏爱昆虫</b>
+          昆虫、幼虫、蚯蚓是重要食物来源，也会取食小型脊椎动物、鸟蛋、果实和人类遗留的食物残渣。
+        </li>
+        <li>
+          <b>不擅长攀爬与奔跑</b>
+          它们行动速度不快，遇到威胁时更倾向于先示威、再喷射，而不是逃跑。
+        </li>
+        <li>
+          <b>喷射前的警告</b>
+          通常会先跺前脚、竖起尾巴、转身对准目标，这是给对方的最后通牒。
+        </li>
+        <li>
+          <b>独居为主</b>
+          除繁殖期和育幼期外，臭鼬多为单独活动，不会形成大型群体。
+        </li>
+        <li>
+          <b>利用现成洞穴</b>
+          常占用其他动物废弃的洞穴，也会在房屋地基缝隙、露台下方、木堆中筑巢。
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 遇到怎么办 -->
+  <section class="block" id="encounter">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>遇到臭鼬时的正确应对</h2>
+        <p>
+          臭鼬通常不会主动攻击人。绝大多数被喷的情况，都是因为人靠得太近、
+          试图驱赶或惊动了它。核心原则只有一句：保持距离，给它退路。
+        </p>
+      </div>
+      <ol class="steps">
+        <li>
+          <b>立刻停下，不要追赶</b>
+          <p>发现臭鼬后先停住脚步，不要挥手、不要喊叫、不要试图用棍棒驱赶。突然的动作最容易触发防御反应。</p>
+        </li>
+        <li>
+          <b>缓慢后退，拉开距离</b>
+          <p>面向它、缓慢向后移动，退到数米以外。不要转身奔跑，奔跑可能被理解为追逐或猎物行为。</p>
+        </li>
+        <li>
+          <b>给宠物上绳，迅速带走</b>
+          <p>狗被喷的概率远高于人。若宠物已经靠近，用牵引绳把它拉回，不要徒手去抱正在对峙的动物。</p>
+        </li>
+        <li>
+          <b>不要堵住它的退路</b>
+          <p>臭鼬被逼到墙角、围栏或车辆下方时更容易喷射。让它能顺利离开，往往几秒内就会自行走开。</p>
+        </li>
+        <li>
+          <b>确认安全后再离开</b>
+          <p>等它走远再继续通行。若它进入房屋下方或车库，先记录位置，再联系当地野生动物管理部门或专业处置人员。</p>
+        </li>
+      </ol>
+      <div class="notice" style="margin-top:26px;">
+        <b>重要提醒：</b>不要自行捕捉、转移或伤害臭鼬。部分地区的臭鼬可能携带狂犬病等病原，
+        被咬伤或抓伤后应及时就医并说明接触情况。任何处置都应以当地法规和专业机构意见为准。
+      </div>
+    </div>
+  </section>
+
+  <!-- 除臭处理 -->
+  <section class="block alt" id="deodorize">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>被喷到之后怎么除臭</h2>
+        <p>
+          臭鼬分泌物的气味来自含硫化合物，附着力强、扩散范围大，单靠清水冲洗效果有限。
+          处理的关键是：先通风、再分解、最后清洗，避免把气味扩散到更多地方。
+        </p>
+      </div>
+      <div class="formula">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>先把人和宠物隔开</h3>
+          <p>被喷到的宠物不要立刻带进室内，避免气味渗入沙发、地毯。先在室外通风处停留，换上可清洗的衣物。</p>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>用弱氧化配方处理体表</h3>
+          <p>常见做法是将双氧水、小苏打与少量洗洁精混合后涂抹在受影响部位，停留数分钟后彻底冲洗。使用前请确认宠物皮肤状况，避免接触眼睛和伤口。</p>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3>反复清洗并充分通风</h3>
+          <p>一次处理往往不够，可能需要重复数次。衣物、毛巾单独清洗，室内开窗通风，必要时更换空气滤网。</p>
+        </div>
+      </div>
+      <div class="grid grid-2" style="margin-top:22px;">
+        <article class="card">
+          <h3>不建议的做法</h3>
+          <p>
+            不要用番茄汁“偏方”代替清洗，它更多是心理安慰；不要把被喷的宠物直接放进浴缸再冲进下水道，
+            气味会残留在浴室；也不要在密闭空间内大量喷洒香水或空气清新剂，混合气味通常更难闻。
+          </p>
+        </article>
+        <article class="card">
+          <h3>需要专业处理的情况</h3>
+          <p>
+            如果气味进入空调系统、地毯深层或车辆内饰，家庭手段往往难以彻底清除，
+            可考虑联系专业清洁服务。宠物若出现眼睛红肿、呕吐、精神萎靡等情况，应尽快就医。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 防范建议 -->
+  <section class="block" id="prevent">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>减少臭鼬靠近的生活建议</h2>
+        <p>
+          臭鼬进入院落，通常是因为有食物、有水、有藏身处。从这三方面入手，
+          比事后驱赶更有效，也更符合与野生动物共处的原则。
+        </p>
+      </div>
+      <div class="tips">
+        <div class="tip">
+          <b>收好食物来源</b>
+          宠物粮不要长时间放在户外，垃圾桶加盖并固定，堆肥区域尽量封闭。
+        </div>
+        <div class="tip">
+          <b>封堵潜在巢位</b>
+          检查地基缝隙、露台下方、木堆和杂物堆，在确认没有动物在内后再进行封堵。
+        </div>
+        <div class="tip">
+          <b>控制院落环境</b>
+          定期修剪贴地灌木，减少潮湿阴暗角落，草坪里的幼虫过多也可能吸引它们觅食。
+        </div>
+        <div class="tip">
+          <b>夜间遛宠注意</b>
+          天黑后使用牵引绳，避开灌木丛和墙角，遇到可疑动静先停下观察再决定路线。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block alt" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>常见问题</h2>
+        <p>以下回答基于一般性科普认知，具体处置请结合当地法规与专业机构建议。</p>
+      </div>
+
+      <details class="faq-item" open>
+        <summary>臭鼬会主动攻击人吗？</summary>
+        <div class="answer">
+          一般不会。臭鼬性格偏防御性，遇到人通常选择离开。只有在被逼近、被追赶、
+          被宠物纠缠或受伤失去退路时，才可能喷射甚至咬人。保持距离是最有效的预防。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>臭鼬的气味能持续多久？</summary>
+        <div class="answer">
+          持续时间取决于附着表面和环境条件。户外通风处通常数天内明显减弱；
+          若渗入织物、地毯或封闭空间，可能滞留更久。及时分解清洗和加强通风能明显缩短时间。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>被臭鼬喷到眼睛怎么办？</summary>
+        <div class="answer">
+          应立即用大量清水或生理盐水轻柔冲洗，不要揉搓。若持续刺痛、畏光或视力异常，
+          应尽快就医，并告知医生接触了臭鼬分泌物。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>可以用驱避剂或超声波设备赶走臭鼬吗？</summary>
+        <div class="answer">
+          这类产品的实际效果因环境而异，且可能影响其他动物。更稳妥的思路是移除吸引源、
+          封堵进入通道。若臭鼬已在建筑下方筑巢，应确认是否育幼，再按当地规定处理，
+          避免把幼崽困在内部。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>臭鼬在生态中有什么作用？</summary>
+        <div class="answer">
+          它们取食大量昆虫，包括一些被视为害虫的种类，同时也是大型捕食者的食物来源之一。
+          在自然环境中，臭鼬是食物链的一环，并不是单纯的“有害动物”。
+        </div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>臭鼬科普站</h4>
+        <p style="margin:0;color:#a89f92;">
+          面向普通读者的野生动物科普内容，聚焦臭鼬的习性、与人类共处的注意事项，
+          以及意外接触后的处理常识。
+        </p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#intro">基本认识</a></li>
+          <li><a href="#traits">生活习性</a></li>
+          <li><a href="#encounter">遇到怎么办</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>实用信息</h4>
+        <ul>
+          <li><a href="#deodorize">除臭处理</a></li>
+          <li><a href="#prevent">防范建议</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>安全提示</h4>
+        <ul>
+          <li>不主动接触野生动物</li>
+          <li>被咬抓后及时就医</li>
+          <li>处置遵循当地法规</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>本页内容为科普参考，不替代专业医疗或野生动物管理意见。</span>
+      <span>臭鼬科普站 · 城市野生动物共处指南</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+  </html>
