@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>要看TV-在线影视观看导航与剧集选择指南</title>
+<meta name="description" content="要看TV是一个面向影视爱好者的在线观看导航站，整理剧集、电影、综艺、动漫等观看入口思路，提供选剧建议、观看方式说明与常见问题解答，帮助你更高效地找到想看的电视内容。">
+<meta name="keywords" content="要看TV,在线影视,电视剧观看,影视导航,剧集推荐,电影综艺,追剧指南">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --bg:#0d1117;
+  --bg-soft:#141b24;
+  --panel:#1a2330;
+  --panel-2:#212c3b;
+  --line:#2c3949;
+  --text:#e8eef6;
+  --text-dim:#9aa9bc;
+  --accent:#ff5f4d;
+  --accent-2:#ffb43a;
+  --accent-soft:rgba(255,95,77,.14);
+  --radius:14px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,17,23,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;height:66px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.5px}
+.logo-mark{
+  width:34px;height:34px;border-radius:9px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;color:#1a1005;font-size:16px;font-weight:900;
+}
+.logo span b{color:var(--accent)}
+.main-nav{display:flex;gap:6px;flex-wrap:wrap}
+.main-nav a{
+  padding:8px 14px;border-radius:999px;font-size:14px;color:var(--text-dim);
+  transition:.2s;
+}
+.main-nav a:hover,.main-nav a.active{background:var(--accent-soft);color:var(--accent)}
+.header-cta{
+  font-size:13px;padding:9px 16px;border-radius:999px;
+  border:1px solid var(--line);color:var(--text-dim);white-space:nowrap;
+}
+.header-cta:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:64px 0 56px;
+  background:
+    radial-gradient(900px 380px at 12% -10%,rgba(255,95,77,.20),transparent 65%),
+    radial-gradient(700px 340px at 92% 6%,rgba(255,180,58,.14),transparent 62%),
+    var(--bg);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--accent-2);
+  background:rgba(255,180,58,.10);
+  border:1px solid rgba(255,180,58,.28);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+.hero h1{font-size:38px;line-height:1.3;font-weight:800;letter-spacing:.5px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{margin-top:16px;color:var(--text-dim);font-size:16px;max-width:620px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{
+  display:inline-block;padding:12px 24px;border-radius:10px;font-size:15px;font-weight:600;
+  transition:.2s;border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#ff7a4d);color:#fff;box-shadow:0 8px 22px rgba(255,95,77,.28)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line);color:var(--text-dim)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+.hero-side{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+.hero-side h2{font-size:15px;color:var(--text-dim);font-weight:600;margin-bottom:14px;letter-spacing:.5px}
+.quick-list li{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:11px 0;border-bottom:1px dashed var(--line);font-size:14px;
+}
+.quick-list li:last-child{border-bottom:none}
+.quick-list li span:first-child{color:var(--text)}
+.quick-list li span:last-child{color:var(--text-dim);font-size:13px}
+.quick-tip{
+  margin-top:16px;font-size:13px;color:var(--text-dim);
+  background:var(--bg-soft);border-left:3px solid var(--accent);
+  padding:10px 12px;border-radius:0 8px 8px 0;
+}
+
+/* ---------- section common ---------- */
+.section{padding:56px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px;flex-wrap:wrap}
+.section-head h2{font-size:24px;font-weight:800;letter-spacing:.5px}
+.section-head h2::after{
+  content:"";display:block;width:38px;height:3px;border-radius:2px;margin-top:9px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+}
+.section-head p{color:var(--text-dim);font-size:14px;max-width:560px}
+
+/* ---------- categories ---------- */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;transition:.2s;
+}
+.cat-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.cat-icon{
+  width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+  font-size:19px;margin-bottom:14px;
+  background:var(--accent-soft);color:var(--accent);
+}
+.cat-card h3{font-size:16px;margin-bottom:8px}
+.cat-card p{font-size:13px;color:var(--text-dim);line-height:1.65}
+
+/* ---------- picks ---------- */
+.pick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pick-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:.2s;display:flex;flex-direction:column;
+}
+.pick-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.pick-thumb{
+  height:118px;display:flex;align-items:center;justify-content:center;
+  font-size:26px;font-weight:800;letter-spacing:2px;color:rgba(255,255,255,.9);
+}
+.t1{background:linear-gradient(135deg,#ff5f4d,#b73a2c)}
+.t2{background:linear-gradient(135deg,#3f7ae0,#1f3f80)}
+.t3{background:linear-gradient(135deg,#2fa86f,#175c3d)}
+.t4{background:linear-gradient(135deg,#a05ce0,#5b2d85)}
+.t5{background:linear-gradient(135deg,#e0a13f,#8a5a12)}
+.t6{background:linear-gradient(135deg,#3fa9c9,#175f75)}
+.pick-body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column}
+.pick-body h3{font-size:16px;margin-bottom:8px}
+.pick-body p{font-size:13px;color:var(--text-dim);flex:1}
+.pick-meta{
+  margin-top:14px;font-size:12px;color:var(--text-dim);
+  display:flex;gap:8px;flex-wrap:wrap;
+}
+.pick-meta span{background:var(--bg-soft);border:1px solid var(--line);padding:2px 9px;border-radius:999px}
+
+/* ---------- guide ---------- */
+.guide{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.guide-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.guide-num{
+  font-size:13px;font-weight:800;color:var(--accent-2);
+  border:1px solid rgba(255,180,58,.35);border-radius:8px;
+  width:34px;height:34px;display:grid;place-items:center;margin-bottom:14px;
+}
+.guide-item h3{font-size:16px;margin-bottom:9px}
+.guide-item p{font-size:13.5px;color:var(--text-dim)}
+
+/* ---------- tips / aside ---------- */
+.tips-wrap{display:grid;grid-template-columns:1.35fr .65fr;gap:26px;align-items:start}
+.tips-list li{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;margin-bottom:12px;font-size:14px;color:var(--text-dim);
+}
+.tips-list li strong{color:var(--text);display:block;margin-bottom:5px;font-size:15px}
+.side-box{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;box-shadow:var(--shadow);
+}
+.side-box h3{font-size:16px;margin-bottom:14px}
+.side-box ul li{
+  font-size:13.5px;color:var(--text-dim);padding:9px 0;border-bottom:1px dashed var(--line);
+}
+.side-box ul li:last-child{border-bottom:none}
+.side-box ul li b{color:var(--accent-2);font-weight:600}
+
+/* ---------- faq ---------- */
+.faq{background:var(--bg-soft);border-top:1px solid var(--line)}
+.faq-list{max-width:900px;margin:0 auto}
+.faq-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  margin-bottom:12px;overflow:hidden;
+}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;color:var(--text);
+  font-size:15px;font-weight:600;padding:17px 20px;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  font-family:inherit;
+}
+.faq-q::after{content:"+";color:var(--accent);font-size:20px;font-weight:400;transition:.2s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .3s ease;
+  font-size:14px;color:var(--text-dim);padding:0 20px;
+}
+.faq-item.open .faq-a{max-height:320px;padding-bottom:18px}
+
+/* ---------- footer ---------- */
+.site-footer{background:#0a0e13;border-top:1px solid var(--line);padding:44px 0 26px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+.footer-brand p{font-size:13.5px;color:var(--text-dim);margin-top:14px;max-width:300px}
+.footer-col h4{font-size:14px;margin-bottom:14px;color:var(--text)}
+.footer-col li{font-size:13.5px;color:var(--text-dim);padding:5px 0}
+.footer-col li a:hover{color:var(--accent)}
+.footer-bottom{
+  margin-top:34px;padding-top:20px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:var(--text-dim);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .pick-grid{grid-template-columns:repeat(2,1fr)}
+  .guide-grid{grid-template-columns:1fr}
+  .tips-wrap{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .header-inner{height:auto;padding:12px 0;flex-wrap:wrap;justify-content:center}
+  .main-nav{justify-content:center;order:3;width:100%}
+  .main-nav a{padding:7px 11px;font-size:13px}
+  .header-cta{display:none}
+  .hero{padding:44px 0 40px}
+  .hero h1{font-size:27px}
+  .hero p.lead{font-size:15px}
+  .section{padding:42px 0}
+  .cat-grid,.pick-grid{grid-template-columns:1fr}
+  .section-head h2{font-size:21px}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="要看TV首页">
+      <span class="logo-mark">TV</span>
+      <span>要看<b>TV</b></span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#categories" class="active">内容分类</a>
+      <a href="#picks">热门方向</a>
+      <a href="#guide">观看指南</a>
+      <a href="#tips">选剧建议</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="header-cta" href="#guide">先看观看指南</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-tag">影视观看 · 选片导航 · 追剧参考</span>
+        <h1>要看TV，先弄清楚<em>看什么、在哪看、怎么看</em></h1>
+        <p class="lead">
+          “要看TV”通常出现在想找剧、想追综艺、想找一部能安心看完的影视内容的时候。
+          本站把常见的观看需求整理成清晰的方向：先按类型缩小范围，再按平台与设备确认播放方式，
+          最后结合时长、口碑与更新节奏决定要不要开追。下面从分类、选剧思路到常见疑问，逐项说明。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#picks">浏览热门方向</a>
+          <a class="btn btn-ghost" href="#guide">了解观看方式</a>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <h2>快速定位：你现在属于哪种情况</h2>
+        <ul class="quick-list">
+          <li><span>只想随便找一部下饭剧</span><span>看短剧集/情景喜剧</span></li>
+          <li><span>想追一部有讨论度的新剧</span><span>看更新节奏与口碑</span></li>
+          <li><span>想跟家人一起看</span><span>看题材与内容尺度</span></li>
+          <li><span>想补经典高分作品</span><span>看榜单与长评</span></li>
+          <li><span>只想看综艺放松</span><span>看季播与常驻阵容</span></li>
+        </ul>
+        <p class="quick-tip">
+          提示：先确定“看多久”和“和谁看”，比直接翻排行榜更容易选到合适的片子。
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section" id="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>内容分类：先按类型缩小范围</h2>
+          <p>不同类型的观看节奏差别很大，先分类再挑选，比漫无目的地浏览更省时间。</p>
+        </div>
+      </div>
+      <div class="cat-grid">
+        <article class="cat-card">
+          <div class="cat-icon">剧</div>
+          <h3>电视剧 / 连续剧</h3>
+          <p>适合有固定追剧时间的人。国产剧、日韩剧、欧美剧在集数、单集时长和更新方式上差异明显，追之前先确认总集数，避免中途弃剧。</p>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">影</div>
+          <h3>电影</h3>
+          <p>时长集中、一次看完，适合时间有限或想获得完整叙事体验的观众。选择时可优先看题材标签和时长是否匹配当下精力。</p>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">综</div>
+          <h3>综艺节目</h3>
+          <p>节奏轻松、可随时暂停，适合边做事边看。季播节目注意播出周期，长期综艺则更适合按兴趣挑选固定环节。</p>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">漫</div>
+          <h3>动漫 / 动画</h3>
+          <p>覆盖全年龄层，题材跨度大。长篇连载与单季番剧的观看方式不同，建议先确认是否完结，再决定是否入坑。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Picks -->
+  <section class="section" id="picks" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>热门观看方向参考</h2>
+          <p>以下为常见的观看方向类型示例，用于说明如何判断一部内容是否适合自己，不构成对具体作品的排名或推荐。</p>
+        </div>
+      </div>
+      <div class="pick-grid">
+        <article class="pick-card">
+          <div class="pick-thumb t1">悬疑</div>
+          <div class="pick-body">
+            <h3>强情节悬疑剧</h3>
+            <p>适合能连续观看、喜欢推理和反转的观众。观看时建议避免提前搜索剧情，以免被剧透影响体验。</p>
+            <div class="pick-meta"><span>需专注</span><span>适合连续看</span></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <div class="pick-thumb t2">都市</div>
+          <div class="pick-body">
+            <h3>都市生活剧</h3>
+            <p>节奏相对平缓，适合下班后放松或作为背景音。挑选时可关注人物设定是否贴近自己关心的议题。</p>
+            <div class="pick-meta"><span>轻松</span><span>可碎片看</span></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <div class="pick-thumb t3">纪录</div>
+          <div class="pick-body">
+            <h3>纪录片</h3>
+            <p>信息密度高，适合想在看的同时获得知识或视角的观众。建议按主题挑选，而不是按热度排序。</p>
+            <div class="pick-meta"><span>涨知识</span><span>适合独看</span></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <div class="pick-thumb t4">古装</div>
+          <div class="pick-body">
+            <h3>古装与年代剧</h3>
+            <p>世界观和人物关系较复杂，适合愿意投入时间的观众。开看前了解大致背景，能减少前几集的困惑。</p>
+            <div class="pick-meta"><span>长线追</span><span>人物多</span></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <div class="pick-thumb t5">喜剧</div>
+          <div class="pick-body">
+            <h3>喜剧与轻喜剧</h3>
+            <p>单集独立性强，随时可看随时可停，适合用餐时间或休息间隙，对连续性要求低。</p>
+            <div class="pick-meta"><span>下饭</span><span>低门槛</span></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <div class="pick-thumb t6">科幻</div>
+          <div class="pick-body">
+            <h3>科幻与奇幻</h3>
+            <p>设定是核心看点，建议按世界观完整度挑选。部分作品信息量大，适合安排整块时间观看。</p>
+            <div class="pick-meta"><span>设定向</span><span>需沉浸</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide -->
+  <section class="section guide" id="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>观看方式指南：在哪看、用什么看</h2>
+          <p>确定内容之后，播放渠道和设备往往决定了实际体验。下面三点是最容易被忽略的环节。</p>
+        </div>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-item">
+          <div class="guide-num">01</div>
+          <h3>确认正规播放渠道</h3>
+          <p>同一部作品在不同地区可能由不同平台提供播放服务，且授权会随时间变化。建议优先通过官方应用或网站确认可播放状态，避免访问来源不明的页面，以免遇到风险链接或恶意弹窗。</p>
+        </div>
+        <div class="guide-item">
+          <div class="guide-num">02</div>
+          <h3>按设备选择清晰度</h3>
+          <p>手机端更适合通勤和碎片时间，电视与投影更适合沉浸观看。清晰度越高对网络要求越高，网络不稳定时可先降低画质保证流畅，再根据情况调整。</p>
+        </div>
+        <div class="guide-item">
+          <div class="guide-num">03</div>
+          <h3>留意字幕与配音版本</h3>
+          <p>外语内容通常有原声字幕和配音两种版本，观看前确认版本可以避免中途切换。与家人一起看时，配音版本往往更容易跟上剧情。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="section" id="tips">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>选剧建议与观看注意事项</h2>
+          <p>把“想看”变成“看得下去”，关键在于提前判断内容是否匹配自己的时间和状态。</p>
+        </div>
+      </div>
+      <div class="tips-wrap">
+        <ul class="tips-list">
+          <li>
+            <strong>先看时长，再看题材</strong>
+            一部两小时的电影和一部长篇剧集，对注意力的要求完全不同。时间紧张时优先选择时长可控的内容，避免开了头却迟迟看不完。
+          </li>
+          <li>
+            <strong>用前三集判断是否继续</strong>
+            多数剧集在前几集完成人物和世界观铺垫。如果前三集仍无法进入状态，继续投入时间的性价比通常不高。
+          </li>
+          <li>
+            <strong>区分“热度高”和“适合自己”</strong>
+            讨论度高的作品不一定符合个人口味。题材、节奏、内容尺度这些因素，比播放量更能决定观看体验。
+          </li>
+          <li>
+            <strong>注意内容尺度与观看场景</strong>
+            与家人或儿童一起观看时，建议提前了解题材是否涉及暴力、惊悚或其他敏感内容，避免出现不适。
+          </li>
+          <li>
+            <strong>控制连续观看时长</strong>
+            连续追剧容易造成用眼疲劳和作息紊乱。可以给自己设定每天固定的观看集数，把追剧变成可持续的习惯。
+          </li>
+        </ul>
+        <aside class="side-box">
+          <h3>观看前的三个小检查</h3>
+          <ul>
+            <li><b>是否完结</b> —— 未完结作品需要等待更新，追更节奏会影响体验。</li>
+            <li><b>总集数</b> —— 提前知道长度，便于安排时间。</li>
+            <li><b>播放渠道</b> —— 确认正规平台，避免来源不明的页面。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>常见问题</h2>
+          <p>围绕“要看TV”这类观看需求，整理几个被问得最多的问题。</p>
+        </div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button">想看剧但不知道从哪部开始，怎么办？</button>
+          <div class="faq-a">
+            <p>可以先确定三个条件：可投入的时间、想看的类型、以及是否介意内容尺度。条件明确之后，选择范围会大幅缩小。如果仍然难以决定，可以先从单集时长较短、评价稳定的作品入手，降低试错成本。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">同一部剧在不同平台都能看吗？</button>
+          <div class="faq-a">
+            <p>不一定。影视内容的播放权通常按地区和平台划分，同一部作品在不同平台的可用状态可能不同，也可能随时间变化。观看前建议以官方渠道显示的信息为准。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">追更剧和完结剧应该怎么选？</button>
+          <div class="faq-a">
+            <p>追更适合喜欢讨论、不介意等待的观众；完结剧则可以按自己的节奏连续观看，不必担心断更或剧情遗忘。如果平时时间不固定，完结作品通常更省心。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">画质总是卡顿，是内容的问题吗？</button>
+          <div class="faq-a">
+            <p>多数情况下与网络带宽、设备性能或同时运行的应用有关，而不是内容本身。可以尝试降低清晰度、关闭后台应用或更换网络环境，通常能明显改善流畅度。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">怎样避免被剧透？</button>
+          <div class="faq-a">
+            <p>在看完之前，尽量减少在社交平台搜索剧名或角色名，相关推荐和评论区往往包含关键情节。如果需要了解基本信息，可以只看类型、时长和播出状态这类不涉及剧情的字段。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#top">
+          <span class="logo-mark">TV</span>
+          <span>要看<b>TV</b></span>
+        </a>
+        <p>围绕“要看TV”的观看需求，整理内容分类、选剧思路与观看方式说明，帮助观众更高效地决定看什么、怎么看。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容分类</h4>
+        <ul>
+          <li><a href="#categories">电视剧</a></li>
+          <li><a href="#categories">电影</a></li>
+          <li><a href="#categories">综艺</a></li>
+          <li><a href="#categories">动漫</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>观看参考</h4>
+        <ul>
+          <li><a href="#picks">热门方向</a></li>
+          <li><a href="#guide">观看指南</a></li>
+          <li><a href="#tips">选剧建议</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>使用提示</h4>
+        <ul>
+          <li>优先选择正规播放渠道</li>
+          <li>注意内容尺度与观看场景</li>
+          <li>合理安排连续观看时间</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>要看TV · 影视观看导航与选剧参考</span>
+      <span>页面内容为观看方式与选择思路说明，不提供影视资源存储与传播</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.faq-item');
+  items.forEach(function (item) {
+    var btn = item.querySelector('.faq-q');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.contains('open');
+      items.forEach(function (other) {
+        other.classList.remove('open');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+  </html>
